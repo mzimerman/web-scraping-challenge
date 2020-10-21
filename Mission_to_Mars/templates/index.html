@@ -8,7 +8,6 @@
   <title>Mission to Mars</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css>
 </head>
 
 <body>
@@ -27,8 +26,8 @@
         <div class="media">
           <div class="media-body">
             <h3><b>Latest Mars News</b></h3>
-            <h4 class="heading">{{mars_data.news_title}}</h4>
-            <p>{{mars_data.news_p}}</p>
+            <h4 class="heading">{{mars_data.nasa_headline}}</h4>
+            <p>{{mars_data.nasa_teaser}}</p>
             <hr class="my-4">
           </div>
         </div>
@@ -42,7 +41,7 @@
   <!-- Featured Mars Image -->  
     <div class="col-md-8">
       <h3><b>Featured Mars Image</b></h3>
-      <img src={{mars_data.featured_image_url}} style="width:300px;">
+      <img src={{mars_data.image_path}} style="width:300px;">
     </div>
 
       <!-- Mars Facts --> <!---
@@ -52,15 +51,15 @@
             <div class="panel-body">
               <h4><b>Mars Facts</b></h4>
               <table border="1" class="dataframe">
-                  {{mars_data.mars_facts |safe }}</table>
+                  {{mars_datamars_df |safe }}</table>
             </div>
           </div>
         </div>
       </div> -->
       <div class="col-md-4">
-        <div class="text-widget" id="mars_facts">
+        <div class="text-widget" id="mars_df">
           <h4>Mars Facts</h4>
-          {{ mars_data.mars_facts | safe }}
+          {{ mars_data.mars_df | safe }}
         </div>
       </div>
       
@@ -74,7 +73,7 @@
     </div>
     <!-- Loop through hemispheres dictionary with images and titles -->
     <!-- https://docs.djangoproject.com/en/3.0/ref/templates/builtins/ -->
-    {% for hemisphere in mars_data.hemisphere_image_urls %}
+    {% for hemisphere in mars_data.hemispehere_image_urls %}
       <div class="col-md-6">
         <div class="thumbnail">
           <img src="{{hemisphere.img_url}}" style="width:200px;">

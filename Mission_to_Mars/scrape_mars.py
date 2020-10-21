@@ -100,7 +100,7 @@ for item in range(len(links)):
         'nasa_teaser': nasa_teaser,
         'image_path': image_path,
         'mars_df': mars_df,
-        'hemispehere_imgage_urls': hemisphere_image_urls
+        'hemispehere_image_urls': hemisphere_image_urls
     }
 
     browser.quit()
